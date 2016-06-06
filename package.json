@@ -7,9 +7,31 @@
     "node": "6.2.x"
   },
   "scripts": {
+    "clean": "rimraf build && mkdirp build/server",
+    "prebuild": "npm run clean",
+    "build:js:backend": "browserify server/app.js -o build/server/app.js -t [ babelify ] --node",
+    "build:js:backend:watch": "watch \"npm run build:js:backend\" server/",
+    "build": "parallelshell \"npm run build:js:backend\"",
+    "build:watch": "parallelshell \"npm run build:backend:watch\"",
+    "prestart": "npm run build",
+    "start": "node build/server/app.js",
+    "start:watch": "nodemon --watch server --exec \"npm run start\""
   },
   "devDependencies": {
+    "babel-core": "6.9.0",
+    "babel-polyfill": "6.9.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-preset-react": "6.5.0",
+    "babelify": "7.3.0",
+    "browserify": "^13.0.1",
+    "bufferutil": "^1.2.1",
+    "nodemon": "^1.9.2",
+    "parallelshell": "^2.0.0",
+    "utf-8-validate": "^1.2.1",
+    "watch": "^0.18.0"
   },
   "dependencies": {
+    "express": "^4.13.4",
+    "ws": "^1.1.0"
   }
 }
