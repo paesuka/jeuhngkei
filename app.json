@@ -1,0 +1,7 @@
+{
+	"name": "xiangqi engine",
+	"description": "xiangqi challenge server",
+	"repository": "https://github.com/paesuka/xiangqi-challenge",
+	"logo": "https://node-js-sample.herokuapp.com/node.svg",
+	"keywords": ["node", "express", "static"]
+}

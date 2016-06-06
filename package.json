@@ -1,0 +1,15 @@
+{
+  "name": "xiangqi-challenge",
+  "version": "0.1.0",
+  "private": true,
+  "main": "build/server/app.js",
+  "engines": {
+    "node": "6.2.x"
+  },
+  "scripts": {
+  },
+  "devDependencies": {
+  },
+  "dependencies": {
+  }
+}
