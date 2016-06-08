@@ -1,7 +1,13 @@
 'use strict';
 
-export function create() {
-  return new Session();
-}
+import {
+  SessionType
+} from './sessionType';
+import * as SingleGameSession from './singleGameSession';
 
-function Session() {}
+export function create(name, sessionType = SessionType.SINGLE_GAME) {
+  switch (sessionType) {
+    case SessionType.SINGLE_GAME:
+      return SingleGameSession.create(name);
+  }
+}

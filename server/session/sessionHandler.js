@@ -6,14 +6,12 @@ const SessionHandler = {
   sessions: [],
 
   handleClientConnection(webServer) {
-    return createSession(this.sessions);
+    this.sessions.push(createSession());
   }
 }
 
-function createSession(sessions) {
-  let session = SessionFactory.create();
-  sessions.push(session);
-  return session;
+function createSession(name = 'default') {
+  return SessionFactory.create();
 }
 
 export default SessionHandler;
