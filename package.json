@@ -13,6 +13,10 @@
     "build:js:backend:watch": "watch \"npm run build:js:backend\" server/",
     "build": "parallelshell \"npm run build:js:backend\"",
     "build:watch": "parallelshell \"npm run build:backend:watch\"",
+    "test:backend": "mocha --compilers js:babel-core/register \"test/**/*.js\"",
+    "test:backend:watch": "npm run test:backend -- -w",
+    "test": "parallelshell \"npm run test:backend\"",
+    "test:watch": "parallelshell \"npm run test:backend:watch\"",
     "prestart": "npm run build",
     "start": "node build/server/app.js",
     "start:watch": "nodemon --watch server --exec \"npm run start\""
@@ -25,8 +29,11 @@
     "babelify": "7.3.0",
     "browserify": "^13.0.1",
     "bufferutil": "^1.2.1",
+    "chai": "^3.5.0",
+    "mocha": "^2.5.3",
     "nodemon": "^1.9.2",
     "parallelshell": "^2.0.0",
+    "sinon": "^1.17.4",
     "utf-8-validate": "^1.2.1",
     "watch": "^0.18.0"
   },

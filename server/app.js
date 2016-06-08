@@ -2,6 +2,7 @@
 // if js files merged, put this into a function to not pollute global scope
 import express from 'express';
 import http from 'http';
+import SessionHandler from './session/sessionHandler';
 import {
   Server as WebSocketServer
 } from 'ws';
@@ -12,7 +13,7 @@ let server = http.createServer(express());
 new WebSocketServer({
   server
 }).on('connection', (ws) => {
-  console.info('connection received')
+  SessionHandler.handleClientConnection(ws);
 });
 
 server.listen(port, () => {
