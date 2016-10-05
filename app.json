@@ -1,7 +1,7 @@
 {
-	"name": "xiangqi engine",
-	"description": "xiangqi challenge server",
-	"repository": "https://github.com/paesuka/xiangqi-challenge",
+	"name": "jeuhngkei",
+	"description": "jeuhngkei middleware",
+	"repository": "https://github.com/paesuka/jeuhngkei",
 	"logo": "https://node-js-sample.herokuapp.com/node.svg",
 	"keywords": ["node", "express"]
 }

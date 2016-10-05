@@ -1,5 +1,5 @@
-# 象棋 engine
-- JavaScript engine server
+# 象棋
+- JavaScript middleware
 
 ## TechStack
 - ECMA Script 6
